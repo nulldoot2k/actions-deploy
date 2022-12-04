@@ -45,7 +45,8 @@ git add .
 # That will create a nice commit message with something like:
 timedatectl set-timezone Asia/Ho_Chi_Minh
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
-git commit -m "Github Actions - $(date)"
+# git commit -m "Github Actions - $(date)"
+GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"
 echo "Build branch ready to go. Pushing to Github..."
 # Force push this update to our gh-pages
 git push --force $REMOTE_REPO master:gh-pages
