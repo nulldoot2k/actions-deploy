@@ -43,6 +43,7 @@ git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@gmail.com"
 git add .
 # That will create a nice commit message with something like:
+timedatectl set-timezone Asia/Ho_Chi_Minh
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
 git commit -m "Github Actions - $(date)"
 echo "Build branch ready to go. Pushing to Github..."
