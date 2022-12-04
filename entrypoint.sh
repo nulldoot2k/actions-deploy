@@ -47,8 +47,8 @@ timedatectl set-timezone Asia/Ho_Chi_Minh
 apt update -y
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
 # git commit -m "Github Actions - $(date)"
-# GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"
-git commit -m "Github Actions update latest"
+GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"
+# git commit -m "Github Actions update latest"
 echo "Build branch ready to go. Pushing to Github..."
 # Force push this update to our gh-pages
 git push --force $REMOTE_REPO master:gh-pages
