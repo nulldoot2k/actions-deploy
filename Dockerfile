@@ -2,10 +2,10 @@
 # it is a very light docker image.
 FROM ruby:2-slim
 LABEL author="Nulldoot2k"
-LABEL version="v.1"
+LABEL version="v1.0"
 # LABEL version="3.1.2"
 
-ENV BUNDLER_VERSION 2.2.29
+ENV BUNDLER_VERSION 2.3.16
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     bats \
@@ -17,7 +17,7 @@ RUN apt-get update && \
     shellcheck \
     libffi7 \
     git-all \
-    && gem install bundler:2.2.29 \
+    && gem install bundler:2.3.16 \
     && bundle config --global silence_root_warning 1
 
 # This is our entrypoint to our custom scripts
