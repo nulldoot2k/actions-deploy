@@ -2,7 +2,7 @@
 # it is a very light docker image.
 FROM ruby:2-slim
 LABEL author="Nulldoot2k"
-LABEL version="1.0.3"
+LABEL version="v.1"
 # LABEL version="3.1.2"
 
 ENV BUNDLER_VERSION 2.2.29
