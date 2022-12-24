@@ -10,7 +10,7 @@ echo "🚀 Starting deployment action"
 
 # Creating the repository URL in this way will allow us to `git push` without providing a password
 # All thanks to the GITHUB_TOKEN that will grant us access to the repository
-REMOTE_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+REMOTE_REPO="https://nulldoot2k:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
 # We need to clone the repo here.
 # Remember, our Docker container is practically pristine at this point
@@ -24,7 +24,7 @@ bundle install
 
 # Build the website using Jekyll
 echo "🏋️ Building website..."
-JEKYLL_ENV=production bundle exec jekyll build
+JEKYLL_ENV=bundle exec jekyll build
 echo "Jekyll build done"
 
 # Now lets go to the generated folder by Jekyll
@@ -39,16 +39,16 @@ rm -f README.md
 # Now we init a new git repository inside _site
 # So we can perform a commit
 git init
-git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@gmail.com"
+git config user.name "nulldoot2k"
+git config user.email "companydatv412@gmail.com"
 git add .
 # That will create a nice commit message with something like:
 timedatectl set-timezone Asia/Ho_Chi_Minh
 apt update -y
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
-# git commit -m "Github Actions - $(date)"
+git commit -m "Github Actions - $(date)"
 # GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"
-git commit -m "Github Actions update latest"
+# git commit -m "Github Actions update latest"
 echo "Build branch ready to go. Pushing to Github..."
 # Force push this update to our gh-pages
 git push --force $REMOTE_REPO master:gh-pages
