@@ -34,26 +34,29 @@ cd build
 echo "☁️ Publishing website"
 
 # We don't need the README.md file on this branch
-rm -f README.md
+sudo rm -f README.md
 
 # Now we init a new git repository inside _site
 # So we can perform a commit
-git init
-git config --global user.name "nulldoot2k"
-git config --global user.email "companydatv412@gmail.com"
-git add .
+sudo git init
+echo "khoi tao"
+sudo git config --global user.name "nulldoot2k"
+echo "Add 1"
+sudo git config --global user.email "companydatv412@gmail.com"
+echo "Add 2"
+sudo git add .
 # That will create a nice commit message with something like:
 # timedatectl set-timezone Asia/Ho_Chi_Minh
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
-git commit -m "Github Actions - $(date)"
+sudo git commit -m "Github Actions - $(date)"
 # GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"
 # git commit -m "Github Actions update latest"
 echo "Build branch ready to go. Pushing to Github..."
 # Force push this update to our gh-pages
-git push --force $REMOTE_REPO master:gh-pages
+sudo git push --force $REMOTE_REPO master:gh-pages
 # Now everything is ready.
 # Lets just be a good citizen and clean-up after ourselves
-rm -fr .git
+sudo rm -fr .git
 cd ..
-rm -rf repo
+sudo rm -rf repo
 echo "🎉 New version deployed 🎊"
