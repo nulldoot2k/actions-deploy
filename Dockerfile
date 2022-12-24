@@ -6,6 +6,8 @@ LABEL version="v1.0"
 # LABEL version="3.1.2"
 
 ENV BUNDLER_VERSION 2.3.16
+RUN apt-get update
+RUN apt-get install apt-utils
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     bats \
@@ -16,6 +18,7 @@ RUN apt-get update && \
     make \
     shellcheck \
     libffi7 \
+    git\
     git-all \
     && gem install bundler:2.3.16 \
     && bundle config --global silence_root_warning 1
