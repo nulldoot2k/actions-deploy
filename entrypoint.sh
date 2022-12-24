@@ -39,8 +39,8 @@ rm -f README.md
 # Now we init a new git repository inside _site
 # So we can perform a commit
 git init
-git config user.name "nulldoot2k"
-git config user.email "companydatv412@gmail.com"
+git config --global user.name "nulldoot2k"
+git config --global user.email "companydatv412@gmail.com"
 git add .
 # That will create a nice commit message with something like:
 # timedatectl set-timezone Asia/Ho_Chi_Minh
